@@ -11,7 +11,7 @@ const StyledFoundWords = styled.div`
 
 const Title = styled.h1`
     margin: 0;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
 `
 
@@ -24,7 +24,7 @@ const WordsContainer = styled.div`
 
 const Word = styled.p`
     margin: 0;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
 `
 
