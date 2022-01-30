@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
 		color: ${props => props.theme.text}
 	}
 
+	html, body, #root {
+		height: 100%;
+	}
+
 	html {
 		font-size: 16px;
 	}
@@ -52,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const StyledApp = styled.div`
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;

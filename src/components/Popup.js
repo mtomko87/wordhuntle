@@ -4,7 +4,7 @@ const Background = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 30;
@@ -33,6 +33,7 @@ const CloseButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     cursor: pointer;
 `
 

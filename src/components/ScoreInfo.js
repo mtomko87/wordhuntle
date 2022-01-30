@@ -9,7 +9,7 @@ const StyledScoreInfo = styled.div`
     width: 100%;
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 0.4rem;
 `
 
 const Score = styled.h1`

@@ -10,13 +10,13 @@ const StyledTopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.125rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     position: relative;
 `
 
 const Title = styled.h1`
     margin: 0;
-    font-size: 1.75rem;
+    font-size: 1.375rem;
     font-weight: 700;
 `
 
@@ -25,8 +25,8 @@ const Button = styled.button`
     cursor: pointer;
     background-color: transparent;
     padding: 0;
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
 `
 
 const TopBar = () => {
