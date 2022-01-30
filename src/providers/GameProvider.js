@@ -41,9 +41,9 @@ const GameProvider = ({children}) => {
         ];
     }, [allWords]);
 
-    useEffect(() => {
-        console.log(allWords.sort((a, b) => b.length - a.length));
-    }, [allWords]);
+    // useEffect(() => {
+    //     console.log(allWords.sort((a, b) => b.length - a.length));
+    // }, [allWords]);
 
     // function to submit the current word if it exists
     const submitWord = () => {
@@ -88,6 +88,7 @@ const GameProvider = ({children}) => {
         if (wordInfo === null) return;
         const timeout = setTimeout(() => setWordInfo(null), 2000);
         return () => clearTimeout(timeout);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [wordInfoTrigger]);
 
     // allow a square to retrieve its necessary information

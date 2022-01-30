@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
@@ -22,7 +21,6 @@ const MenuItem = styled.div`
 `
 
 const Menu = ({menuOpen}) => {
-
     return menuOpen ? (
         <StyledMenu>
             <MenuItem>How to play</MenuItem>

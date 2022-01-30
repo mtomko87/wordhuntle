@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useGame } from "../providers/GameProvider";
 import Board from "./Board";
 import Levels from "./Levels";
 import ScoreInfo from "./ScoreInfo";

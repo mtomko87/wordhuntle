@@ -68,6 +68,7 @@ const Square = ({x, y}) => {
             case -1: return "0%";
             case 0: return "50%";
             case 1: return "100%";
+            default: return "50%";
         }
     }
 
