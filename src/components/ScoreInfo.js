@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import styled from "styled-components";
 import EyeIcon from "../icons/EyeIcon";
 import { useGame } from "../providers/GameProvider";
