@@ -86,7 +86,7 @@ const GameProvider = ({children}) => {
     // handle the word info popup
     useEffect(() => {
         if (wordInfo === null) return;
-        const timeout = setTimeout(() => setWordInfo(null), 2000);
+        const timeout = setTimeout(() => setWordInfo(null), 1500);
         return () => clearTimeout(timeout);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [wordInfoTrigger]);

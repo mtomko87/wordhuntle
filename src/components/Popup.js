@@ -22,14 +22,15 @@ const StyledPopup = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 0.25rem;
     padding: 1rem;
 `
 
 const CloseButton = styled.button`
     background-color: transparent;
     border: none;
-    height: 1rem;
-    width: 1rem;
+    height: 0.875rem;
+    width: 0.875rem;
     padding: 0;
     cursor: pointer;
 `
