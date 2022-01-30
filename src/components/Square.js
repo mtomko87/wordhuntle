@@ -7,6 +7,7 @@ const StyledSquare = styled.div`
     border: 0.25rem solid ${props => props.active ? props.theme.primary : props.theme.border};
     border-radius: 7%;
     position: relative;
+    touch-action: none;
 `
 
 const Inner = styled.div.attrs(props => ({

@@ -13,7 +13,7 @@ const StyledScoreInfo = styled.div`
 `
 
 const Score = styled.h1`
-    margin: -0.25rem 0;
+    margin: 0;
     font-size: 2.375rem;
     font-weight: 700;
     flex-grow: 1;
