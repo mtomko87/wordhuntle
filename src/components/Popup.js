@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CloseIcon from "../icons/CloseIcon";
 
 const Background = styled.div`
     position: absolute;
@@ -29,11 +30,7 @@ const CloseButton = styled.button`
     border: none;
     height: 1rem;
     width: 1rem;
-    font-size: 1.75rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    padding: 0;
     cursor: pointer;
 `
 
@@ -48,7 +45,7 @@ const Popup = ({children, close}) => {
         <Background>
             <StyledPopup>
                 <CloseButton onClick={close}>
-                    &times;
+                    <CloseIcon/>
                 </CloseButton>
                 <Content>
                     {children}
