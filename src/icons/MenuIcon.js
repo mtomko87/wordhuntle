@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Svg = styled.svg`
-    stroke: ${props => props.theme.text};
+    stroke: var(--clr-text);
     stroke-width: 2;
 `
 

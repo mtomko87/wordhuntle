@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { useGame } from "../providers/GameProvider";
 
 const StyledSquare = styled.div`
-    background-color: ${props => props.active ? props.theme.squareActive : props.theme.square};
-    border: 0.25rem solid ${props => props.active ? props.theme.primary : props.theme.border};
+    background-color: ${props => props.active ? "var(--clr-square-active)" : "var(--clr-square)"};
+    border: 0.25rem solid ${props => props.active ? "var(--clr-primary)" : "var(--clr-border)"};
     border-radius: 7%;
     position: relative;
     touch-action: none;
@@ -15,7 +15,7 @@ const Inner = styled.div.attrs(props => ({
         fontSize: props.fontSize,
     }
 }))`
-    color: ${props => props.active ? props.theme.primary : props.theme.text};
+    color: ${props => props.active ? "var(--clr-primary)" : "var(--clr-text)"};
     font-weight: 700;
     width: 100%;
     height: 100%;
@@ -27,7 +27,7 @@ const Inner = styled.div.attrs(props => ({
 `
 
 const Svg = styled.svg`
-    stroke: ${props => props.theme.primary};
+    stroke: var(--clr-primary);
     opacity: 0.3;
     stroke-width: 8%;
     position: absolute;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
-    background-color: ${props => props.theme.square};
-    border: 1px solid ${props => props.theme.border};
+    background-color: var(--clr-square);
+    border: 1px solid var(--clr-border);
     border-right: none;
     border-radius: 0 0 0 0.25rem;
     position: absolute;
@@ -16,7 +16,7 @@ const MenuItem = styled.div`
     padding: 0.25rem 1.25rem 0.25rem 0.5rem;
     cursor: pointer;
     &:hover {
-        background-color: ${props => props.theme.highlight};
+        background-color: var(--clr-highlight);
     }
 `
 

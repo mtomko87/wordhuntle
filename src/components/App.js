@@ -1,23 +1,25 @@
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import GameProvider from "../providers/GameProvider";
 import GameArea from "./GameArea";
 import TopBar from "./TopBar";
 
-const theme = {
-	background: "#f7f7f7",
-	primary: "#007bff",
-	square: "white",
-	squareActive: "#e0efff",
-	border: "#ddd",
-	text: "#444",
-	highlight: "#eee",
-}
-
 const GlobalStyle = createGlobalStyle`
 
+	/* colors */
+	:root {
+		--clr-background: #f7f7f7;
+		--clr-primary: #007bff;
+		--clr-square: white;
+		--clr-square-active: #e0efff;
+		--clr-border: #ddd;
+		--clr-text: #444;
+		--clr-highlight: #f0f0f0;
+	}
+
+	/* misc */
 	body {
 		margin: 0;
-		background-color: ${props => props.theme.background};
+		background-color: var(--clr-background);
 	}
 
 	*,
@@ -25,13 +27,15 @@ const GlobalStyle = createGlobalStyle`
 	*::after {
 		box-sizing: border-box;
 		font-family: 'Source Serif 4', sans-serif;
-		color: ${props => props.theme.text}
+		color: var(--clr-text);
 	}
 
+	/* set everything to be the height of the screen */
 	html, body, #root {
 		height: 100%;
 	}
 
+	/* set global font size based on screen size */
 	html {
 		font-size: 16px;
 	}
@@ -65,7 +69,7 @@ const StyledApp = styled.div`
 
 const App = () => {
 	return (
-		<ThemeProvider theme={theme}>
+		<>
 			<GlobalStyle/>
 			<StyledApp>
 				<TopBar/>
@@ -73,7 +77,7 @@ const App = () => {
 					<GameArea/>
 				</GameProvider>	
 			</StyledApp>
-		</ThemeProvider>
+		</>
 	);
 }
 

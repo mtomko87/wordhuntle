@@ -10,7 +10,7 @@ const StyledLevels = styled.div`
     position: relative;
     &::before {
         content: "";
-        background-color: ${props => props.theme.primary};
+        background-color: var(--clr-primary);
         width: calc(100% - 2rem);
         height: 2px;
         position: absolute;
@@ -36,9 +36,9 @@ const Level = styled.div`
     align-items: center;
     font-size: 0.875rem;
     font-weight: 700;
-    color: ${props => props.theme.primary};
-    border: 2px solid ${props => props.theme.primary};
-    background-color: ${props => props.completed ? props.theme.primary : props.theme.squareActive};
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    background-color: ${props => props.completed ? "var(--clr-primary)" : "var(--clr-square-active)"};
     height: ${props => props.active ? "2rem" : "0.75rem"};
     width: ${props => props.active ? "2rem" : "0.75rem"};
     ${props => props.current && css`
@@ -50,7 +50,7 @@ const Level = styled.div`
             margin-left: -0.5rem;
             border-width: 0.5rem;
             border-style: solid;
-            border-color: ${props => props.theme.primary} transparent transparent transparent;
+            border-color: var(--clr-primary) transparent transparent transparent;
         }
     `}
 `

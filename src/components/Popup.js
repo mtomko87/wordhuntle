@@ -14,7 +14,7 @@ const Background = styled.div`
 `
 
 const StyledPopup = styled.div`
-    background-color: ${props => props.theme.background};
+    background-color: var(--clr-background);
     border-radius: 0.375rem;
     height: calc(100% - 3rem);
     width: calc(min(60vh, 100%) - 3rem);

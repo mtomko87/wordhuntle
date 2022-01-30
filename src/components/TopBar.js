@@ -5,8 +5,8 @@ import Menu from "./Menu";
 
 const StyledTopBar = styled.div`
     width: 100%;
-    background-color: ${props => props.theme.square};
-    border-bottom: 1px solid ${props => props.theme.border};
+    background-color: var(--clr-square);
+    border-bottom: 1px solid var(--clr-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
