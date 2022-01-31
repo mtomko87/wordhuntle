@@ -11,14 +11,15 @@ const Background = styled.div`
     z-index: 30;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 `
 
 const StyledPopup = styled.div`
     background-color: var(--clr-background);
-    border-radius: 0.375rem;
-    height: calc(100% - 3rem);
-    width: calc(min(60vh, 100%) - 3rem);
+    border-radius: 0.375rem 0.375rem 0 0;
+    height: calc(100% - 1.5rem);
+    width: 100%;
+    max-width: 60vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

@@ -162,4 +162,4 @@ const getWordScore = word => {
     return wordScores[index];
 }
 
-export { boardSize, minWordLength, getTodaysSeed, generateTodaysBoard, findAllWords, getWordScore }
+export { boardSize, minWordLength, wordScores, getTodaysSeed, generateTodaysBoard, findAllWords, getWordScore }

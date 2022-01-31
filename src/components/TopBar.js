@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import MenuIcon from "../icons/MenuIcon";
-import Menu from "./Menu";
+import InfoIcon from "../icons/InfoIcon";
+import HelpScreen from "./HelpScreen";
+import Popup from "./Popup";
 
 const StyledTopBar = styled.div`
     width: 100%;
@@ -10,7 +11,7 @@ const StyledTopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25rem 0.75rem;
+    padding: 0.375rem 0.75rem;
     position: relative;
 `
 
@@ -22,25 +23,31 @@ const Title = styled.h1`
 
 const Button = styled.button`
     border: none;
-    cursor: pointer;
     background-color: transparent;
+    cursor: pointer;
     padding: 0;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.75rem;
+    width: 1.75rem;
 `
 
 const TopBar = () => {
 
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [helpOpen, setHelpOpen] = useState(false);
 
     return (
-        <StyledTopBar>
-            <Title>wordhuntle</Title>
-            <Button onClick={() => setMenuOpen(state => !state)}>
-                <MenuIcon/>
-            </Button>
-            <Menu menuOpen={menuOpen}/>
-        </StyledTopBar>
+        <>
+            <StyledTopBar>
+                <Title>wordhuntle</Title>
+                <Button onClick={() => setHelpOpen(true)}>
+                    <InfoIcon/>
+                </Button>
+            </StyledTopBar>
+            {helpOpen && (
+                <Popup close={() => setHelpOpen(false)}>
+                    <HelpScreen/>
+                </Popup>
+            )}
+        </>
     );
 }
 
