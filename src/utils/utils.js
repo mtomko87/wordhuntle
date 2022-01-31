@@ -100,21 +100,28 @@ const generateTodaysBoard = () => {
     return board;
 }
 
+const generateYesterdaysBoard = () => {
+    const seed = getTodaysSeed() - 1;
+    const prng = seedrandom(seed);
+    const board = generateBoard(prng);
+    return board;
+}
+
 /* finding words */
 
-const checkWord = (board, word, path = []) => {
+const checkWord = (board, word, pos = null) => {
 
     // if the word length is zero we found a match
     if (word.length === 0) return true;
 
     // if this is the first run, find all places we can start and recurse
-    if (path.length === 0) {
+    if (pos === null) {
         for (let i = 0; i < board.length; i++) {
             for (let j = 0; j < board.length; j++) {
                 if (board[i][j] === word.charAt(0)) {
-                    let newBoard = clone2dArray(board);
+                    const newBoard = clone2dArray(board);
                     newBoard[i][j] = null;
-                    if (checkWord(newBoard, word.substr(1), [{x: i, y: j}])) return true;
+                    if (checkWord(newBoard, word.substr(1), {x: i, y: j})) return true;
                 }
             }
         }
@@ -122,19 +129,16 @@ const checkWord = (board, word, path = []) => {
 
     // if this is not the first run, check all adjacent squares to our current square and look for the next letter
     else {
-        let pos = path[path.length - 1];
         for (const i of [-1, 0, 1]) {
             for (const j of [-1, 0, 1]) {
                 if (i === 0 && j === 0) continue;
-                let x = pos.x + i;
-                let y = pos.y + j;
+                const x = pos.x + i;
+                const y = pos.y + j;
                 if (x < 0 || y < 0 || x >= board.length || y >= board.length) continue
                 if (board[x][y] === word.charAt(0)) {
-                    let newBoard = clone2dArray(board);
+                    const newBoard = clone2dArray(board);
                     newBoard[x][y] = null;
-                    let newPath = [...path];
-                    newPath.push({x: x, y: y});
-                    if (checkWord(newBoard, word.substr(1), newPath)) return true;
+                    if (checkWord(newBoard, word.substr(1), {x: x, y: y})) return true;
                 }
             }
         }
@@ -162,4 +166,4 @@ const getWordScore = word => {
     return wordScores[index];
 }
 
-export { boardSize, minWordLength, wordScores, getTodaysSeed, generateTodaysBoard, findAllWords, getWordScore }
+export { boardSize, minWordLength, wordScores, getTodaysSeed, generateTodaysBoard, generateYesterdaysBoard, findAllWords, getWordScore }

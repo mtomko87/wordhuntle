@@ -32,10 +32,10 @@ const Svg = styled.svg`
     stroke-width: 8%;
     position: absolute;
     z-index: 10;
-    top: -58.255%;
-    left: -58.255%;
-    width: 217.02%;
-    height: 217.02%;
+    top: calc(-50% - 0.875rem);
+    left: calc(-50% - 0.875rem);
+    width: calc(200% + 1.75rem);
+    height: calc(200% + 1.75rem);
     stroke-linecap: round;
     overflow: visible;
     pointer-events: none;

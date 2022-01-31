@@ -9,6 +9,12 @@ const todaysSeed = getTodaysSeed();
 const seed = JSON.parse(window.localStorage.getItem("seed"));
 
 if (seed !== todaysSeed) {
+	if (seed === todaysSeed - 1) {
+		const foundWords = localStorage.getItem("foundWords");
+		window.localStorage.setItem("yesterdaysFoundWords", foundWords);
+	} else {
+		window.localStorage.removeItem("yesterdaysFoundWords");
+	}
 	window.localStorage.setItem("seed", JSON.stringify(todaysSeed));
 	window.localStorage.removeItem("foundWords");
 }

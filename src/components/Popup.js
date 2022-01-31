@@ -24,7 +24,7 @@ const StyledPopup = styled.div`
     flex-direction: column;
     align-items: flex-end;
     gap: 0.25rem;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
 `
 
 const CloseButton = styled.button`

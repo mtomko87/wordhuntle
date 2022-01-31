@@ -7,7 +7,7 @@ const Div = styled.div`
     aspect-ratio: 1;
     display: grid;
     grid-template-columns: repeat(${boardSize}, 1fr);
-    grid-gap: 2%;
+    grid-gap: 0.375rem;
 `
 
 const Board = () => {

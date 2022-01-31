@@ -22,7 +22,7 @@ const Score = styled.h1`
 const WordCount = styled.p`
     margin: 0;
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 400;
 `
 
 const SeeWordsButton = styled.button`

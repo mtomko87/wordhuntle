@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Svg = styled.svg`
     stroke: var(--clr-text);
     fill: none;
-    stroke-width: 1.75;
+    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
 `

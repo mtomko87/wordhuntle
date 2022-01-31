@@ -20,6 +20,7 @@ const WordsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow-y: auto;
+    padding-bottom: 1rem;
 `
 
 const Word = styled.p`
