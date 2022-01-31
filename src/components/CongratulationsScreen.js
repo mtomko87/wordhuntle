@@ -19,6 +19,7 @@ const Title = styled.h2`
 const P = styled.p`
     font-weight: 400;
     font-size: 1rem;
+    margin: 0;
 `
 
 const IconContainer = styled.div`
