@@ -127,6 +127,7 @@ const GameProvider = ({children}) => {
 
     // updating current word
     const squareClicked = (x, y) => {
+        if (wordActive) return;
         setWordActive(true);
         addToPath(x, y);
     }

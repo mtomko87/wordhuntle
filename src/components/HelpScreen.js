@@ -48,7 +48,7 @@ const HelpScreen = () => {
             <P>etc.</P>
             <P>Score points to increase your level. Try to reach the max level each day!</P>
             <Title>More</Title>
-            <P>wordhuntle is updated each day at 7 p.m. EST. Check back in each day for a new board!</P>
+            <P>wordhuntle is updated each day at 7pm EST. Check back in each day for a new board!</P>
         </>
     );
 }

@@ -9,7 +9,7 @@ const StyledFoundWords = styled.div`
     gap: 0.5rem;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
     margin: 0;
     font-size: 1.25rem;
     font-weight: 700;

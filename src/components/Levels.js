@@ -1,6 +1,8 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styled, { css } from "styled-components";
 import { useGame } from "../providers/GameProvider";
+import Popup from "./Popup";
+import CongratulationsScreen from "./CongratulationsScreen";
 
 const StyledLevels = styled.div`
     width: 100%;
@@ -57,6 +59,8 @@ const Level = styled.div`
 
 const Levels = () => {
 
+    const [congratulationsOpen, setCongratulationsOpen] = useState(false);
+    const [maxLevelTrigger, setMaxLevelTrigger] = useState(false);
     const { score, levels } = useGame();
 
     const currentLevel = useMemo(() => {
@@ -66,20 +70,34 @@ const Levels = () => {
         return levels.length - 1;
     }, [score, levels]);
 
+    useEffect(() => {
+        if (currentLevel >= levels.length - 1 && !maxLevelTrigger) {
+            setMaxLevelTrigger(true);
+            setTimeout(() => setCongratulationsOpen(true), 1000);
+        }
+    }, [levels, currentLevel, maxLevelTrigger]);
+
     return (
-        <StyledLevels>
-            {levels.map((levelScore, index) => (
-                <LevelContainer key={index}>
-                    <Level
-                        current={index === currentLevel}
-                        completed={index <= currentLevel}
-                        active={index === currentLevel + 1}
-                    >
-                        {(index === currentLevel + 1) && levelScore}
-                    </Level>
-                </LevelContainer>
-            ))}
-        </StyledLevels>
+        <>
+            <StyledLevels>
+                {levels.map((levelScore, index) => (
+                    <LevelContainer key={index}>
+                        <Level
+                            current={index === currentLevel}
+                            completed={index <= currentLevel}
+                            active={index === currentLevel + 1}
+                        >
+                            {(index === currentLevel + 1) && levelScore}
+                        </Level>
+                    </LevelContainer>
+                ))}
+            </StyledLevels>
+            {congratulationsOpen && (
+                <Popup close={() => setCongratulationsOpen(false)}>
+                    <CongratulationsScreen/>
+                </Popup>
+            )}
+        </>
     );
 }
 
