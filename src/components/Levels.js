@@ -73,7 +73,7 @@ const Levels = () => {
     useEffect(() => {
         if (currentLevel >= levels.length - 1 && !maxLevelTrigger) {
             setMaxLevelTrigger(true);
-            setTimeout(() => setCongratulationsOpen(true), 1000);
+            setTimeout(() => setCongratulationsOpen(true), 500);
         }
     }, [levels, currentLevel, maxLevelTrigger]);
 
