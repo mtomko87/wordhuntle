@@ -48,7 +48,7 @@ const InfoChip = styled.div`
     }
     &.success {
         background-color: #49b84f;
-        animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
+        animation: ${goodAnimation} 0.5s cubic-bezier(0, 0.75, 0.25, 1);
     }
 `
 
