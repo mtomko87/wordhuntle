@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { minWordLength, wordScores } from "../utils/utils";
 
 const Title = styled.h2`
+    margin-top: 0;
     font-weight: 700;
     font-size: 1.25rem;
 `

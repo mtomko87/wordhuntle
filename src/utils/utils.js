@@ -124,7 +124,7 @@ const generateBoard = prng => {
             }
         }
 
-        // if we have no moves, try again from the other end
+        // if we have no options, try again from the other end
         if (options.length === 0) {
             path.reverse();
             c--;

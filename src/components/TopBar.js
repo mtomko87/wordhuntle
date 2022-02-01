@@ -1,9 +1,8 @@
-import { useState } from "react";
 import styled from "styled-components";
 import InfoIcon from "../icons/InfoIcon";
 import YesterdayIcon from "../icons/YesterdayIcon";
 import HelpScreen from "./HelpScreen";
-import Popup from "./Popup";
+import Popup, { usePopupTransition } from "./Popup";
 import Yesterday from "./Yesterday";
 
 const StyledTopBar = styled.div`
@@ -34,30 +33,26 @@ const Button = styled.button`
 
 const TopBar = () => {
 
-    const [helpOpen, setHelpOpen] = useState(false);
-    const [yesterdayOpen, setYesterdayOpen] = useState(false);
+    const [helpState, toggleHelp] = usePopupTransition();
+    const [yesterdayState, toggleYesterday] = usePopupTransition();
 
     return (
         <>
             <StyledTopBar>
                 <Title>wordhuntle</Title>
-                <Button onClick={() => setYesterdayOpen(true)}>
+                <Button onClick={() => toggleYesterday(true)}>
                     <YesterdayIcon/>
                 </Button>
-                <Button onClick={() => setHelpOpen(true)}>
+                <Button onClick={() => toggleHelp(true)}>
                     <InfoIcon/>
                 </Button>
             </StyledTopBar>
-            {helpOpen && (
-                <Popup close={() => setHelpOpen(false)}>
-                    <HelpScreen/>
-                </Popup>
-            )}
-            {yesterdayOpen && (
-                <Popup close={() => setYesterdayOpen(false)}>
-                    <Yesterday/>
-                </Popup>
-            )}
+            <Popup state={yesterdayState} close={() => toggleYesterday(false)}>
+                <Yesterday/>
+            </Popup>
+            <Popup state={helpState} close={() => toggleHelp(false)}>
+                <HelpScreen/>
+            </Popup>
         </>
     );
 }

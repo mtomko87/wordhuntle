@@ -1,9 +1,8 @@
-import { useState } from "react";
 import styled from "styled-components";
 import EyeIcon from "../icons/EyeIcon";
 import { useGame } from "../providers/GameProvider";
 import FoundWords from "./FoundWords";
-import Popup from "./Popup";
+import Popup, { usePopupTransition } from "./Popup";
 
 const StyledScoreInfo = styled.div`
     width: 100%;
@@ -38,7 +37,7 @@ const SeeWordsButton = styled.button`
 
 const ScoreInfo = () => {
 
-    const [showWords, setShowWords] = useState(false);
+    const [state, toggle] = usePopupTransition();
     const { score, foundWords } = useGame();
 
     return (
@@ -50,15 +49,13 @@ const ScoreInfo = () => {
                 {foundWords.length} word{foundWords.length === 1 ? "" : "s"}
             </WordCount>
             {foundWords.length > 0 && (
-                <SeeWordsButton onClick={() => setShowWords(true)}>
+                <SeeWordsButton onClick={() => toggle(true)}>
                     <EyeIcon/>
                 </SeeWordsButton>
             )}
-            {showWords && (
-                <Popup close={() => setShowWords(false)}>
-                    <FoundWords/>
-                </Popup>
-            )}
+            <Popup state={state} close={() => toggle(false)}>
+                <FoundWords/>
+            </Popup>
         </StyledScoreInfo>
     );
 }

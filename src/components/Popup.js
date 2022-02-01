@@ -1,8 +1,10 @@
+import useTransition from "react-transition-state";
 import styled from "styled-components";
 import CloseIcon from "../icons/CloseIcon";
 
 const Background = styled.div`
     position: absolute;
+    overflow: hidden;
     top: 0;
     left: 0;
     height: 100%;
@@ -12,6 +14,11 @@ const Background = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    transition: all 200ms ease-in-out;
+    ${props => ((props.state === "preEnter" || props.state === "exiting") && `
+        background-color: rgba(0, 0, 0, 0);
+    `)}
 `
 
 const StyledPopup = styled.div`
@@ -23,8 +30,13 @@ const StyledPopup = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.25rem;
+    gap: 0.5rem;
     padding: 1rem 1rem 0 1rem;
+
+    transition: all 200ms ease-in-out;
+    ${props => ((props.state === "preEnter" || props.state === "exiting") && `
+        transform: translateY(100%);
+    `)}
 `
 
 const CloseButton = styled.button`
@@ -42,10 +54,10 @@ const Content = styled.div`
     overflow: auto;
 `
 
-const Popup = ({children, close}) => {
-    return (
-        <Background>
-            <StyledPopup>
+const Popup = ({children, state, close}) => {
+    return state === "unmounted" ? null : (
+        <Background state={state}>
+            <StyledPopup state={state}>
                 <CloseButton onClick={close}>
                     <CloseIcon/>
                 </CloseButton>
@@ -57,4 +69,14 @@ const Popup = ({children, close}) => {
     );
 }
 
+const usePopupTransition = () => {
+    return useTransition({
+        timeout: 200,
+        mountOnEnter: true,
+        unmountOnExit: true,
+        preEnter: true
+    });
+}
+
 export default Popup;
+export { usePopupTransition };

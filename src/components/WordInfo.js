@@ -39,19 +39,16 @@ const InfoChip = styled.div`
     height: fit-content;
     border-radius: 20rem;
     &.error {
-        background-color: #cf3827;
+        background-color: #de3d2a;
         animation: ${badAnimation} 0.4s ease-in-out;
-        -webkit-animation: ${badAnimation} 0.4s ease-in-out;
     }
     &.warning {
         background-color: #ebac00;
         animation: ${badAnimation} 0.4s ease-in-out;
-        -webkit-animation: ${badAnimation} 0.4s ease-in-out;
     }
     &.success {
         background-color: #49b84f;
         animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
-        -webkit-animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
     }
 `
 
