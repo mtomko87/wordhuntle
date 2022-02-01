@@ -17,7 +17,7 @@ const CurrentWord = styled.h1`
 `
 
 const goodAnimation = keyframes`
-    from {transform: translateY(0.75rem)}
+    from {transform: translateY(1rem)}
     to {transform: translateY(0)}
 `
 
@@ -41,14 +41,17 @@ const InfoChip = styled.div`
     &.error {
         background-color: #cf3827;
         animation: ${badAnimation} 0.4s ease-in-out;
+        -webkit-animation: ${badAnimation} 0.4s ease-in-out;
     }
     &.warning {
         background-color: #ebac00;
         animation: ${badAnimation} 0.4s ease-in-out;
+        -webkit-animation: ${badAnimation} 0.4s ease-in-out;
     }
     &.success {
         background-color: #49b84f;
         animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
+        -webkit-animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
     }
 `
 
