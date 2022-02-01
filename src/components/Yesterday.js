@@ -67,7 +67,7 @@ const Yesterday = () => {
         <Container>
             <div>
                 <Title>Yesterday's words ({allWords.length})</Title>
-                <SubTitle>Words that you found will be highlighted</SubTitle>
+                <SubTitle>Words that you found are highlighted</SubTitle>
             </div>
             <Board>
                 {[...Array(boardSize * boardSize)].map((_, index) => (

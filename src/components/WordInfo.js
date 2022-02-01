@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useGame } from "../providers/GameProvider";
 
 const StyledWordInfo = styled.div`
@@ -16,6 +16,21 @@ const CurrentWord = styled.h1`
     font-weight: 700;
 `
 
+const goodAnimation = keyframes`
+    from {transform: translateY(0.75rem)}
+    to {transform: translateY(0)}
+`
+
+const badAnimation = keyframes`
+    0% {transform: translateX(0)}
+    10% {transform: translateX(-0.5rem)}
+    30% {transform: translateX(0.25rem)}
+    50% {transform: translateX(-0.125rem)}
+    70% {transform: translateX(0.0625rem)}
+    90% {transform: translateX(-0.03125rem)}
+    100% {transform: translateX(0)}
+`
+
 const InfoChip = styled.div`
     color: white;
     font-size: 1.125rem;
@@ -23,17 +38,17 @@ const InfoChip = styled.div`
     width: fit-content;
     height: fit-content;
     border-radius: 20rem;
-
     &.error {
         background-color: #cf3827;
+        animation: ${badAnimation} 0.4s ease-in-out;
     }
-
     &.warning {
         background-color: #ebac00;
+        animation: ${badAnimation} 0.4s ease-in-out;
     }
-
     &.success {
         background-color: #49b84f;
+        animation: ${goodAnimation} 0.4s cubic-bezier(0, 0.5, 0.5, 1);
     }
 `
 
