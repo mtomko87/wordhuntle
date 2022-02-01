@@ -17,7 +17,7 @@ const Background = styled.div`
 
     transition: all 200ms ease-in-out;
     ${props => ((props.state === "preEnter" || props.state === "exiting") && `
-        background-color: rgba(0, 0, 0, 0);
+        opacity: 0;
     `)}
 `
 
