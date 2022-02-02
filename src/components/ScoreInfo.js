@@ -11,7 +11,7 @@ const StyledScoreInfo = styled.div`
     gap: 0.4rem;
 `
 
-const Score = styled.h1`
+const Score = styled.h2`
     margin: 0;
     font-size: 2.375rem;
     font-weight: 700;

@@ -9,7 +9,7 @@ const StyledWordInfo = styled.div`
     align-items: center;
 `
 
-const CurrentWord = styled.h1`
+const CurrentWord = styled.h2`
     margin: 0;
     padding: 0;
     font-size: 2.25rem;
@@ -34,6 +34,7 @@ const badAnimation = keyframes`
 const InfoChip = styled.div`
     color: white;
     font-size: 1.125rem;
+    font-weight: 400;
     padding: 0.25rem 1rem;
     width: fit-content;
     height: fit-content;
