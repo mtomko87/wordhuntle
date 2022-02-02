@@ -28,16 +28,17 @@ const GameProvider = ({children}) => {
     const levels = useMemo(() => {
         let maxScore = 0;
         for (const word of allWords) maxScore += getWordScore(word);
+        console.log(maxScore);
         return [
             0,
-            Math.floor(maxScore * 0.04),
-            Math.floor(maxScore * 0.09),
-            Math.floor(maxScore * 0.15),
-            Math.floor(maxScore * 0.22),
-            Math.floor(maxScore * 0.30),
-            Math.floor(maxScore * 0.39),
-            Math.floor(maxScore * 0.49),
-            Math.floor(maxScore * 0.60),
+            Math.floor(maxScore * 0.05),
+            Math.floor(maxScore * 0.11),
+            Math.floor(maxScore * 0.18),
+            Math.floor(maxScore * 0.26),
+            Math.floor(maxScore * 0.35),
+            Math.floor(maxScore * 0.45),
+            Math.floor(maxScore * 0.56),
+            Math.floor(maxScore * 0.68),
         ];
     }, [allWords]);
 
