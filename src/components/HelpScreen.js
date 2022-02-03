@@ -40,7 +40,7 @@ const HelpScreen = () => {
             <Gif src={howToPlay} alt="How to play"/>
             <P>Keep in mind the following rules:</P>
             <ul>
-                <Li>You can start a word at any position on the grid</Li>
+                <Li>You can connect any two adjacent letters, including diagonally</Li>
                 <Li>You cannot use the same grid cell more than once in a word</Li>
                 <Li>Your line <Span>CAN</Span> cross over itself</Li>
                 <Li>Your word must be at least {minWordLength} letters long</Li>
