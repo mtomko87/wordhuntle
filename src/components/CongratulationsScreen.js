@@ -20,7 +20,7 @@ const Title = styled.h2`
 const P = styled.p`
     font-weight: 400;
     font-size: 1rem;
-    margin: 0;
+    margin: 0.25rem;
 `
 
 const IconContainer = styled.div`
