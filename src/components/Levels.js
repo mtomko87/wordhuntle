@@ -67,21 +67,19 @@ const Levels = () => {
     }, [score, levels]);
 
     return (
-        <>
-            <StyledLevels>
-                {levels.map((levelScore, index) => (
-                    <LevelContainer key={index}>
-                        <Level
-                            current={index === currentLevel}
-                            completed={index <= currentLevel}
-                            active={index === currentLevel + 1}
-                        >
-                            {(index === currentLevel + 1) && levelScore}
-                        </Level>
-                    </LevelContainer>
-                ))}
-            </StyledLevels>
-        </>
+        <StyledLevels>
+            {levels.map((levelScore, index) => (
+                <LevelContainer key={index}>
+                    <Level
+                        current={index === currentLevel}
+                        completed={index <= currentLevel}
+                        active={index === currentLevel + 1}
+                    >
+                        {(index === currentLevel + 1) && levelScore}
+                    </Level>
+                </LevelContainer>
+            ))}
+        </StyledLevels>
     );
 }
 
