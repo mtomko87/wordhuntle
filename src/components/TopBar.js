@@ -43,7 +43,7 @@ const TopBar = () => {
             toggleHelp(true);
             window.localStorage.setItem("visitedFlag", 1);
         }
-    }, []);
+    }, [toggleHelp]);
 
     return (
         <>
