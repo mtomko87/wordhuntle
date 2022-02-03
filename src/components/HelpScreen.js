@@ -38,7 +38,6 @@ const HelpScreen = () => {
             <Title>How to play</Title>
             <P>Use your mouse or finger to connect letters together on the grid to make words.</P>
             <Gif src={howToPlay} alt="How to play"/>
-            <P>Keep in mind the following rules:</P>
             <ul>
                 <Li>You can connect any two adjacent letters, including diagonally</Li>
                 <Li>You cannot use the same grid cell more than once in a word</Li>
