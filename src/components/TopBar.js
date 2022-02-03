@@ -1,3 +1,4 @@
+import { useEffect } from "react/cjs/react.development";
 import styled from "styled-components";
 import InfoIcon from "../icons/InfoIcon";
 import YesterdayIcon from "../icons/YesterdayIcon";
@@ -35,6 +36,14 @@ const TopBar = () => {
 
     const [helpState, toggleHelp] = usePopupTransition();
     const [yesterdayState, toggleYesterday] = usePopupTransition();
+
+    useEffect(() => {
+        const visitedFlag = window.localStorage.getItem("visitedFlag");
+        if (!visitedFlag) {
+            toggleHelp(true);
+            window.localStorage.setItem("visitedFlag", 1);
+        }
+    }, []);
 
     return (
         <>

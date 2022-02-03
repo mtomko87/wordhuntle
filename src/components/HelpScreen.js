@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { minWordLength, wordScores } from "../utils/utils";
+import howToPlay from "../videos/how-to-play.gif";
 
 const Title = styled.h2`
     margin-top: 0;
@@ -10,6 +11,11 @@ const Title = styled.h2`
 const P = styled.p`
     font-weight: 400;
     font-size: 0.875rem;
+`
+
+const Gif = styled.img`
+    width: 60%;
+    border-radius: 0.25rem;
 `
 
 const Li = styled.li`
@@ -30,7 +36,9 @@ const HelpScreen = () => {
     return (
         <>
             <Title>How to play</Title>
-            <P>Use your mouse or finger to connect letters together on the grid to make words. Keep in mind the following rules:</P>
+            <P>Use your mouse or finger to connect letters together on the grid to make words.</P>
+            <Gif src={howToPlay} alt="How to play"/>
+            <P>Keep in mind the following rules:</P>
             <ul>
                 <Li>You can start a word at any position on the grid</Li>
                 <Li>You cannot use the same grid cell more than once in a word</Li>
