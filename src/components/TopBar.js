@@ -1,4 +1,4 @@
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import styled from "styled-components";
 import InfoIcon from "../icons/InfoIcon";
 import YesterdayIcon from "../icons/YesterdayIcon";

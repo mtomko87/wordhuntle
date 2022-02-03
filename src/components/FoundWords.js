@@ -31,11 +31,11 @@ const Word = styled.p`
 
 const FoundWords = () => {
 
-    const { foundWords } = useGame();
+    const { allWords, foundWords } = useGame();
 
     return (
         <StyledFoundWords>
-            <Title>Found words ({foundWords.length})</Title>
+            <Title>Found words ({foundWords.length}/{allWords.length})</Title>
             <WordsContainer>
                 {foundWords.map(word => (
                     <Word key={word}>

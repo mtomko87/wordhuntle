@@ -1,8 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import styled, { css } from "styled-components";
 import { useGame } from "../providers/GameProvider";
-import Popup, { usePopupTransition } from "./Popup";
-import CongratulationsScreen from "./CongratulationsScreen";
 
 const StyledLevels = styled.div`
     width: 100%;
@@ -59,8 +57,6 @@ const Level = styled.div`
 
 const Levels = () => {
 
-    const [state, toggle] = usePopupTransition();
-    const [maxLevelTrigger, setMaxLevelTrigger] = useState(false);
     const { score, levels } = useGame();
 
     const currentLevel = useMemo(() => {
@@ -69,13 +65,6 @@ const Levels = () => {
         }
         return levels.length - 1;
     }, [score, levels]);
-
-    useEffect(() => {
-        if (currentLevel >= levels.length - 1 && !maxLevelTrigger) {
-            setMaxLevelTrigger(true);
-            setTimeout(() => toggle(true), 500);
-        }
-    }, [levels, currentLevel, maxLevelTrigger, toggle]);
 
     return (
         <>
@@ -92,9 +81,6 @@ const Levels = () => {
                     </LevelContainer>
                 ))}
             </StyledLevels>
-            <Popup state={state} close={() => toggle(false)}>
-                <CongratulationsScreen/>
-            </Popup>
         </>
     );
 }

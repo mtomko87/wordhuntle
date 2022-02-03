@@ -66,7 +66,7 @@ const Yesterday = () => {
     return (
         <Container>
             <div>
-                <Title>Yesterday's words ({allWords.length})</Title>
+                <Title>Yesterday's words</Title>
                 <SubTitle>Words that you found are highlighted</SubTitle>
             </div>
             <Board>

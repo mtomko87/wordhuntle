@@ -48,11 +48,9 @@ const ScoreInfo = () => {
             <WordCount>
                 {foundWords.length} word{foundWords.length === 1 ? "" : "s"}
             </WordCount>
-            {foundWords.length > 0 && (
-                <SeeWordsButton onClick={() => toggle(true)}>
-                    <EyeIcon/>
-                </SeeWordsButton>
-            )}
+            <SeeWordsButton onClick={() => toggle(true)}>
+                <EyeIcon/>
+            </SeeWordsButton>
             <Popup state={state} close={() => toggle(false)}>
                 <FoundWords/>
             </Popup>

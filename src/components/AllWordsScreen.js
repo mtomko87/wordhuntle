@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import PartyIcon from "../icons/PartyIcon";
-import { useGame } from "../providers/GameProvider";
 
 const Container = styled.div`
     height: 100%;
@@ -20,7 +19,7 @@ const Title = styled.h2`
 const P = styled.p`
     font-weight: 400;
     font-size: 1rem;
-    margin: 0;
+    margin: 0.25rem;
 `
 
 const IconContainer = styled.div`
@@ -31,14 +30,12 @@ const IconContainer = styled.div`
 `
 
 const CongratulationsScreen = () => {
-
-    const { allWords, foundWords } = useGame();
-
     return (
         <Container>
-            <Title>Congratulations!</Title>
-            <P>You've reached the max level for today!</P>
-            <P>Words found: {foundWords.length}/{allWords.length}</P>
+            <Title>Wow!</Title>
+            <P>You found every word!</P>
+            <P>I hope you weren't expecting a cooler image this time, it's just the same one as before.</P>
+            <P>Seriously though, good job.</P>
             <IconContainer>
                 <PartyIcon/>
             </IconContainer>

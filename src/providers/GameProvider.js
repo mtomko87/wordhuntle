@@ -41,9 +41,9 @@ const GameProvider = ({children}) => {
         ];
     }, [allWords]);
 
-    // useEffect(() => {
-    //     console.log(allWords.sort((a, b) => b.length - a.length));
-    // }, [allWords]);
+    useEffect(() => {
+        console.log(allWords.sort((a, b) => b.length - a.length));
+    }, [allWords]);
 
     // function to submit the current word if it exists
     const submitWord = () => {
@@ -149,6 +149,7 @@ const GameProvider = ({children}) => {
             squareClicked,
             squareEntered,
             submitWord,
+            allWords,
             foundWords,
             score,
             levels,
@@ -168,4 +169,4 @@ const useGame = () => {
 }
 
 export default GameProvider;
-export { useGame }
+export { useGame };
