@@ -17,8 +17,8 @@ const CurrentWord = styled.h2`
 `
 
 const goodAnimation = keyframes`
-    from {transform: translateY(1rem)}
-    to {transform: translateY(0)}
+    from {transform: translateY(1.25rem); opacity: 0}
+    to {transform: translateY(0); opacity: 1}
 `
 
 const badAnimation = keyframes`
@@ -41,15 +41,15 @@ const InfoChip = styled.div`
     border-radius: 20rem;
     &.error {
         background-color: #de3d2a;
-        animation: ${badAnimation} 0.4s ease-in-out;
+        animation: ${badAnimation} 0.6s ease-in-out;
     }
     &.warning {
         background-color: #ebac00;
-        animation: ${badAnimation} 0.4s ease-in-out;
+        animation: ${badAnimation} 0.6s ease-in-out;
     }
     &.success {
         background-color: #49b84f;
-        animation: ${goodAnimation} 0.5s cubic-bezier(0, 0.75, 0.25, 1);
+        animation: ${goodAnimation} 0.75s cubic-bezier(0, 0.75, 0.25, 1);
     }
 `
 

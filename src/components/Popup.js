@@ -15,7 +15,7 @@ const Background = styled.div`
     justify-content: center;
     align-items: flex-end;
 
-    transition: all 200ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
     ${props => ((props.state === "preEnter" || props.state === "exiting") && `
         opacity: 0;
     `)}
@@ -33,7 +33,7 @@ const StyledPopup = styled.div`
     gap: 0.5rem;
     padding: 1rem 1rem 0 1rem;
 
-    transition: all 200ms ease-in-out;
+    transition: transform 300ms ease-in-out;
     ${props => ((props.state === "preEnter" || props.state === "exiting") && `
         transform: translateY(100%);
     `)}
@@ -71,7 +71,7 @@ const Popup = ({children, state, close}) => {
 
 const usePopupTransition = () => {
     return useTransition({
-        timeout: 200,
+        timeout: 300,
         mountOnEnter: true,
         unmountOnExit: true,
         preEnter: true
