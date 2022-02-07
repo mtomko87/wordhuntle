@@ -125,6 +125,13 @@ const GameProvider = ({children}) => {
         setCurrentWord(currentWord + newLetter);
     }
 
+    const removeFromPath = () => {
+        const pathCopy = [...path];
+        pathCopy.pop();
+        setPath(pathCopy);
+        setCurrentWord(currentWord.slice(0, -1));
+    }
+
     // updating current word
     const squareClicked = (x, y) => {
         if (wordActive) return;
@@ -134,8 +141,11 @@ const GameProvider = ({children}) => {
 
     const squareEntered = (x, y) => {
         if (!wordActive) return;
-        for (const square of path) {
-            if (square.x === x && square.y === y) return;
+        for (let i = 0; i < path.length; i++) {
+            if (path[i].x === x && path[i].y === y) {
+                if (i === path.length - 2) removeFromPath();
+                return;
+            }
         }
         const {x: pathEndX, y: pathEndY} = path[path.length - 1];
         if (Math.abs(x - pathEndX) > 1 || Math.abs(y - pathEndY) > 1) return;

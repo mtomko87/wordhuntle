@@ -80,7 +80,6 @@ const Square = ({x, y}) => {
     }
 
     const handleMouseMove = () => {
-        if (active) return;
         squareEntered(x, y)
     }
 
