@@ -72,8 +72,8 @@ const App = () => {
 		<>
 			<GlobalStyle/>
 			<StyledApp>
-				<TopBar/>
 				<GameProvider>
+					<TopBar/>
 					<GameArea/>
 				</GameProvider>	
 			</StyledApp>

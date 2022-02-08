@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import styled, { css } from "styled-components";
 import { useGame } from "../providers/GameProvider";
 
@@ -59,12 +58,13 @@ const Levels = () => {
 
     const { score, levels } = useGame();
 
-    const currentLevel = useMemo(() => {
-        for (let i = 0; i < levels.length - 1; i++) {
-            if (score < levels[i + 1]) return i;
+    let currentLevel = levels.length - 1;
+    for (let i = 0; i < levels.length - 1; i++) {
+        if (score < levels[i + 1]) {
+            currentLevel = i;
+            break;
         }
-        return levels.length - 1;
-    }, [score, levels]);
+    }
 
     return (
         <StyledLevels>

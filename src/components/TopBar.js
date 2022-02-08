@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import InfoIcon from "../icons/InfoIcon";
+import ShareIcon from "../icons/ShareIcon";
 import YesterdayIcon from "../icons/YesterdayIcon";
 import HelpScreen from "./HelpScreen";
 import Popup, { usePopupTransition } from "./Popup";
+import ShareScreen from "./ShareScreen";
 import Yesterday from "./Yesterday";
 
 const StyledTopBar = styled.div`
@@ -36,6 +38,7 @@ const TopBar = () => {
 
     const [helpState, toggleHelp] = usePopupTransition();
     const [yesterdayState, toggleYesterday] = usePopupTransition();
+    const [shareState, toggleShare] = usePopupTransition();
 
     useEffect(() => {
         const visitedFlag = window.localStorage.getItem("visitedFlag");
@@ -49,6 +52,9 @@ const TopBar = () => {
         <>
             <StyledTopBar>
                 <Title>wordhuntle</Title>
+                <Button onClick={() => toggleShare(true)}>
+                    <ShareIcon/>
+                </Button>
                 <Button onClick={() => toggleYesterday(true)}>
                     <YesterdayIcon/>
                 </Button>
@@ -56,6 +62,9 @@ const TopBar = () => {
                     <InfoIcon/>
                 </Button>
             </StyledTopBar>
+            <Popup state={shareState} close={() => toggleShare(false)}>
+                <ShareScreen/>
+            </Popup>
             <Popup state={yesterdayState} close={() => toggleYesterday(false)}>
                 <Yesterday/>
             </Popup>
