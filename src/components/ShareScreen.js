@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useGame } from "../providers/GameProvider";
 
 const Title = styled.h2`
-    margin: 0;
+    margin-top: 0;
     font-weight: 700;
     font-size: 1.25rem;
 `
@@ -11,10 +11,6 @@ const Title = styled.h2`
 const Info = styled.pre`
     font-weight: 400;
     font-size: 0.875rem;
-    background: var(--clr-square);
-    border: 0.125rem solid var(--clr-border);
-    padding: 0.5rem;
-    border-radius: 0.25rem;
 `
 
 const Button = styled.button`
@@ -48,7 +44,7 @@ const ShareScreen = () => {
     const info =
         `wordhuntle - ${month} ${date.getUTCDate()}, ${date.getUTCFullYear()}\n` +
         `Level ${currentLevel}/${levels.length - 1} — ` +
-        `${score} points — ` +
+        `${score} point${score === 1 ? "" : "s"} — ` +
         `${foundWords.length} word${foundWords.length === 1 ? "" : "s"}`;
 
     const copyText = () => {
