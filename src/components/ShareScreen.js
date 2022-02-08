@@ -12,8 +12,7 @@ const Info = styled.pre`
     font-weight: 400;
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
-    background: var(--clr-square);
-    border: 1px solid var(--clr-border);
+    background: var(--clr-highlight);
     border-radius: 0.25rem;
     padding: 0.25rem 0.5rem;
 `
@@ -21,7 +20,6 @@ const Info = styled.pre`
 const Button = styled.button`
     border: none;
     background: var(--clr-primary);
-    border: 1px solid var(--clr-primary);
     border-radius: 0.25rem;
     font-size: 0.875rem;
     font-weight: 400;
