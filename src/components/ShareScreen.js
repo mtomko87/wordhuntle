@@ -11,7 +11,7 @@ const Title = styled.h2`
 const Info = styled.pre`
     font-weight: 400;
     font-size: 0.875rem;
-    background: white;
+    background: var(--clr-square);
     border: 0.125rem solid var(--clr-border);
     padding: 0.5rem;
     border-radius: 0.25rem;
