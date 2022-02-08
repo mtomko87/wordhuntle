@@ -15,7 +15,7 @@ const StyledTopBar = styled.div`
     display: flex;
     align-items: center;
     padding: 0.375rem 0.75rem;
-    gap: 0.5rem;
+    gap: 0.625rem;
 `
 
 const Title = styled.h1`
