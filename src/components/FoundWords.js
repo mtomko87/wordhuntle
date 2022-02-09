@@ -37,7 +37,7 @@ const FoundWords = () => {
         <StyledFoundWords>
             <Title>Found words ({foundWords.length}/{allWords.length})</Title>
             <WordsContainer>
-                {foundWords.map(word => (
+                {[...foundWords].sort().map(word => (
                     <Word key={word}>
                         {word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()}
                     </Word>
