@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 		--clr-square-active: #e0efff;
 		--clr-border: #ddd;
 		--clr-text: #444;
-		--clr-highlight: #eaeaea;
+		--clr-highlight: #e9e9e9;
 	}
 
 	/* misc */

@@ -14,7 +14,7 @@ const Info = styled.pre`
     margin-bottom: 0.5rem;
     background: var(--clr-highlight);
     border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.375rem 0.5rem;
 `
 
 const Button = styled.button`
