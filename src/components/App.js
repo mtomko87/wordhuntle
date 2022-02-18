@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 			--clr-border: #3a3a3a;
 			--clr-text: white;
 			--clr-highlight: #222;
-			--clr-overlay: rgba(255, 255, 255, 0.1);
+			--clr-overlay: rgba(60, 60, 60, 0.7);
 		` : css`
 			--clr-background: #f7f7f7;
 			--clr-primary: #007bff;
