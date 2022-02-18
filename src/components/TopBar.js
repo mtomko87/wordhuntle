@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import DarkIcon from "../icons/DarkIcon"
 import InfoIcon from "../icons/InfoIcon";
+import LightIcon from "../icons/LightIcon";
 import ShareIcon from "../icons/ShareIcon";
 import YesterdayIcon from "../icons/YesterdayIcon";
 import HelpScreen from "./HelpScreen";
@@ -34,7 +36,7 @@ const Button = styled.button`
     width: 1.25rem;
 `
 
-const TopBar = () => {
+const TopBar = ({darkMode, setDarkMode}) => {
 
     const [helpState, toggleHelp] = usePopupTransition();
     const [yesterdayState, toggleYesterday] = usePopupTransition();
@@ -52,6 +54,9 @@ const TopBar = () => {
         <>
             <StyledTopBar>
                 <Title>wordhuntle</Title>
+                <Button onClick={() => setDarkMode(mode => !mode)}>
+                    {darkMode ? <LightIcon/> : <DarkIcon/>}
+                </Button>
                 <Button onClick={() => toggleShare(true)}>
                     <ShareIcon/>
                 </Button>

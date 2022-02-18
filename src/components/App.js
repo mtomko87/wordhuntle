@@ -1,4 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
+import { useLocalStorage } from "../hooks/hooks";
 import GameProvider from "../providers/GameProvider";
 import GameArea from "./GameArea";
 import TopBar from "./TopBar";
@@ -7,13 +8,25 @@ const GlobalStyle = createGlobalStyle`
 
 	/* colors */
 	:root {
-		--clr-background: #f7f7f7;
-		--clr-primary: #007bff;
-		--clr-square: white;
-		--clr-square-active: #e0efff;
-		--clr-border: #ddd;
-		--clr-text: #444;
-		--clr-highlight: #e9e9e9;
+		${props => props.darkMode ? css`
+			--clr-background: #111;
+			--clr-primary: #3897ff;
+			--clr-square: #242424;
+			--clr-square-active: #1f2e40;
+			--clr-border: #3a3a3a;
+			--clr-text: white;
+			--clr-highlight: #222;
+			--clr-overlay: rgba(255, 255, 255, 0.1);
+		` : css`
+			--clr-background: #f7f7f7;
+			--clr-primary: #007bff;
+			--clr-square: white;
+			--clr-square-active: #e0efff;
+			--clr-border: #ddd;
+			--clr-text: #444;
+			--clr-highlight: #e9e9e9;
+			--clr-overlay: rgba(0, 0, 0, 0.5);
+		`}
 	}
 
 	/* misc */
@@ -68,12 +81,13 @@ const StyledApp = styled.div`
 `
 
 const App = () => {
+	const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
 	return (
 		<>
-			<GlobalStyle/>
+			<GlobalStyle darkMode={darkMode}/>
 			<StyledApp>
 				<GameProvider>
-					<TopBar/>
+					<TopBar darkMode={darkMode} setDarkMode={setDarkMode}/>
 					<GameArea/>
 				</GameProvider>	
 			</StyledApp>

@@ -23,7 +23,7 @@ const Button = styled.button`
     border-radius: 0.25rem;
     font-size: 0.875rem;
     font-weight: 400;
-    color: var(--clr-square);
+    color: white;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
 `

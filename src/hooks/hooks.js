@@ -64,4 +64,4 @@ const useLocalStorageRef = (key, initialValue) => {
     return [value, valueRef, setValue];
 }
 
-export { useStateRef, useStateTrigger, useLocalStorageRef };
+export { useStateRef, useStateTrigger, useLocalStorage, useLocalStorageRef };

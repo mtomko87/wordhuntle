@@ -9,7 +9,7 @@ const Background = styled.div`
     left: 0;
     height: 100%;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--clr-overlay);
     z-index: 30;
     display: flex;
     justify-content: center;
