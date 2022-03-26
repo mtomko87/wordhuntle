@@ -53,7 +53,7 @@ const HelpScreen = () => {
             <P><i>Tip: Every board will have a word that is at least 8 letters long. Make sure to keep an eye out for it!</i></P>
             <P>Score points to increase your level. Try to reach the max level each day!</P>
             <Title>More</Title>
-            <P>Wordhuntle is updated every day at 7pm EST. Check back in each day for a new board!</P>
+            <P>Wordhuntle is updated every day at 8pm EST. Check back in each day for a new board!</P>
         </>
     );
 }
