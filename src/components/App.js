@@ -10,10 +10,10 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		${props => props.darkMode ? css`
 			--clr-background: #111;
-			--clr-primary: #3897ff;
-			--clr-square: #242424;
+			--clr-primary: #59a9ff;
+			--clr-square: #303030;
 			--clr-square-active: #1f2e40;
-			--clr-border: #3a3a3a;
+			--clr-border: #4a4a4a;
 			--clr-text: white;
 			--clr-highlight: #222;
 			--clr-overlay: rgba(60, 60, 60, 0.7);
