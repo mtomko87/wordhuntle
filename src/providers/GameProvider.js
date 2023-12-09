@@ -13,6 +13,7 @@ const GameProvider = ({children}) => {
     const [wordActive, setWordActive] = useState(false);
     const [path, setPath] = useState([]);
     const [wordInfo, wordInfoTrigger, setWordInfo] = useStateTrigger(null);
+    const [showingHints, setShowingHints] = useState(false);
 
     const score = useMemo(() => {
         let total = 0;
@@ -164,6 +165,8 @@ const GameProvider = ({children}) => {
             score,
             levels,
             wordInfo,
+            showingHints,
+            setShowingHints
         }}>
             {children}
         </GameContext.Provider>
